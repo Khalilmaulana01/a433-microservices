@@ -1,0 +1,21 @@
+# docker compose version
+version: "3.7"
+
+# service item-db & item-app
+services:
+  item-app: #item-app service
+    image: prometh3us/item-app:v1 # image item-app from docker hub
+    ports:
+      - 80:8080 # port mapping host in container item-app
+    depends_on:
+      - item-db # service item-app only running after the item-db is setup
+    restart: always # set the restart policy whenever its stopped
+
+  item-db: #item-db service
+    image: mongo:3 # using the mongo:3 from docker hub
+    volumes:
+      - app-db:/data/db # app-db volume which target /data/db in container
+    restart: always # set the restart policy whenever its stopped
+
+volumes:
+  app-db:

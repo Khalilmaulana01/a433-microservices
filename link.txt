@@ -1,0 +1,5 @@
+# Docker registry
+https://hub.docker.com/r/prometh3us/item-app
+
+# Github repo
+https://github.com/Khalilmaulana01/a433-microservices/tree/proyek-pertama
